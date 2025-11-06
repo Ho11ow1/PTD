@@ -1,0 +1,18 @@
+# Visual studio solution
+*.sln
+
+# User-specific files
+.vs/
+.vscode/
+
+# Build directories
+**/bin/
+**/obj/
+**/out/
+
+# Backup files
+*.bak
+
+# environment variables
+.env
+.env.production
