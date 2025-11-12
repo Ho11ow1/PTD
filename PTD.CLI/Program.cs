@@ -1,8 +1,10 @@
 ﻿using System;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 using PTD.Core.Config;
 
-namespace PTD.Core
+namespace PTD.CLI
 {
     public class Program
     {
@@ -10,12 +12,13 @@ namespace PTD.Core
         {
             SetGlobalConfig();
 
-
+            Processing.Decompiler decompiler = new Processing.Decompiler();
+            decompiler.DecompileCS("", "");
         }
 
         private static void SetGlobalConfig()
         {
-            GlobalConfig.EnableLogging(true);
+            GlobalConfig.AllowLogging(true);
             GlobalConfig.AddEOFLines(true);
             GlobalConfig.PlaceBracketsOnNewLines(true);
 

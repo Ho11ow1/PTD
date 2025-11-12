@@ -17,6 +17,7 @@ namespace PTD.Core.Logging
 
         public enum LogLevel
         {
+            None,
             Log,
             Error
         }
@@ -54,7 +55,16 @@ namespace PTD.Core.Logging
                     {
                         if (writer == null) { writer = CreateWriter(); }
 
-                        writer.WriteLine($"[{level.ToString().ToUpper()}] {message}\n");
+                        if (level == LogLevel.None)
+                        {
+                            writer.WriteLine($"{message}");
+                        }
+                        else
+                        {
+                            writer.WriteLine($"[{level.ToString().ToUpper()}] {message}");
+                        }
+
+                        return;
                     }
                     catch (IOException)
                     {
