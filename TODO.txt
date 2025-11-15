@@ -1,0 +1,9 @@
+Parse over decompiled data to:
+(StreamReader, parse namespaces)
+(StreamReader, compare prop { get; set; } to _returnType get_prop() void set_prop(x))
+(StreamReader, iterate over enums removing compiler exclusive additions)
+	- Export namespace using
+	- Remove get_ set_ methods for properties
+	- 
+
+Actually use config

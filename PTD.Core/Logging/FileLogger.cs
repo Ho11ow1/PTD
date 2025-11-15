@@ -24,12 +24,12 @@ namespace PTD.Core.Logging
 
         public FileLogger(string fileName)
         {
-            if (!Directory.Exists(GlobalConfig.OutputDirectory))
+            if (!Directory.Exists(GlobalConfig.Files.OutputDirectory))
             {
-                Directory.CreateDirectory(GlobalConfig.OutputDirectory);
+                Directory.CreateDirectory(GlobalConfig.Files.OutputDirectory);
             }
 
-            _filePath = Path.Combine(GlobalConfig.OutputDirectory, fileName);
+            _filePath = Path.Combine(GlobalConfig.Files.OutputDirectory, fileName);
             writer = CreateWriter();
         }
 
@@ -70,7 +70,7 @@ namespace PTD.Core.Logging
                     {
                         writer?.Dispose();
                         writer = null;
-                        Thread.Sleep(GlobalConfig.RetryDelayMilliseconds);
+                        Thread.Sleep(GlobalConfig.Performance.RetryDelayMilliseconds);
                     }
                 }
             }
@@ -100,7 +100,7 @@ namespace PTD.Core.Logging
                 }
                 catch (IOException)
                 {
-                    Thread.Sleep(GlobalConfig.RetryDelayMilliseconds);
+                    Thread.Sleep(GlobalConfig.Performance.RetryDelayMilliseconds);
                 }
             }
         }

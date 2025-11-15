@@ -1,8 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Security.Cryptography.X509Certificates;
-
-using PTD.Core.Config;
+﻿using PTD.Core.Config;
+using PTD.Emit;
 
 namespace PTD.CLI
 {
@@ -10,24 +7,9 @@ namespace PTD.CLI
     {
         public static void Main(string[] args)
         {
-            SetGlobalConfig();
+            GlobalConfig.LoadConfig();
 
-            Processing.Decompiler decompiler = new Processing.Decompiler();
-            decompiler.DecompileCS("", "");
+            PipeLine.StartProcessing();
         }
-
-        private static void SetGlobalConfig()
-        {
-            GlobalConfig.AllowLogging(true);
-            GlobalConfig.AddEOFLines(true);
-            GlobalConfig.PlaceBracketsOnNewLines(true);
-
-            Console.WriteLine($"Global Configuration:\n" +
-                              $" - Logging preference: {GlobalConfig.Logging}\n" +
-                              $" - End of File Lines preference: {GlobalConfig.EndOfFileLines}\n" +
-                              $" - Brackets on new Lines preference: {GlobalConfig.BracketsOnNewLines}\n");
-        }
-
-
     }
 }

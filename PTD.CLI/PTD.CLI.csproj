@@ -2,7 +2,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\PTD.Core\PTD.Core.csproj"/>
-		<ProjectReference Include="..\PTD.Processing\PTD.Processing.csproj"/>
+		<ProjectReference Include="..\PTD.Emit\PTD.Emit.csproj"/>
 	</ItemGroup>
 
 	<PropertyGroup>

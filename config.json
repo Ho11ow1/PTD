@@ -1,0 +1,26 @@
+{
+    "files":
+    {
+        "outputFile": "Decompiled.cs",
+        "logFile": "decompiler.log",
+        "inputFileLocation": "C:\$Dev\CS\HospitalManager\ConsoleApp2\ConsoleApp2\bin\Debug\net8.0\ConsoleApp2.dll"
+    },
+    "formatting":
+    {
+        "allowLogging": true,
+        "addEOFLines": true,
+        "bracketsOnNewLines": true,
+        "indentSize": 4,
+        "useSpaces": true,
+        "addComments": false
+    },
+    "performance":
+    {
+        "retryDelayMs": 100
+    },
+    "decompilation":
+    {
+        "includePrivateMembers": true,
+        "includeInternalMembers": true
+    }
+}
